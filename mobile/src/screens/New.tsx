@@ -6,6 +6,7 @@ import colors from 'tailwindcss/colors'
 import { BackButton } from '../components/BackButton'
 import { Checkbox } from '../components/Checkbox'
 import { Wrapper } from '../components/Wrapper'
+import { api } from '../lib/axios'
 
 const availableWeekDays = [
   'Domingo',
@@ -19,6 +20,7 @@ const availableWeekDays = [
 
 export function New () {
   const [weekDays, setWeekDays] = useState<number[]>([])
+  const [title, setTitle] = useState('')
 
   function handleToggleWeekDays(weekDay: number) {
     if (weekDays.includes(weekDay)) {
@@ -26,6 +28,17 @@ export function New () {
       return
     }
     setWeekDays(weekDays => [...weekDays, weekDay])
+  }
+
+  async function createNewHabit () {
+    if (title.length && weekDays.length) {
+      await api.post('habits', {
+        title,
+        weekDays
+      })
+      setTitle('')
+      setWeekDays([])
+    }
   }
   return (
     <Wrapper>
@@ -36,7 +49,10 @@ export function New () {
         <TextInput
           className='text-white py-4 px-4 bg-zinc-900 rounded-lg border-2 border-zinc-800 text-base mt-3 font-regular'
           placeholder='Exercícios, dormir bem, etc...'
-          placeholderTextColor={colors.zinc[400]} />
+          placeholderTextColor={colors.zinc[400]}
+          onChangeText={text => setTitle(text)}
+          value={title}
+        />
         <Text className='font-semibold text-white mt-6 text-base'>Qual a recorrência?</Text>
         <View className='mt-3'>
           {availableWeekDays.map((day, index) => (
@@ -49,6 +65,7 @@ export function New () {
           ))}
         </View>
         <TouchableOpacity
+          onPress={createNewHabit}
           className='w-full flex-row items-center justify-center rounded-lg bg-green-500 py-4 mt-6'
           activeOpacity={0.7}
         >

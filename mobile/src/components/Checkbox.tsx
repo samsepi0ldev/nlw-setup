@@ -5,9 +5,10 @@ import colors from 'tailwindcss/colors'
 interface CheckboxProps extends TouchableOpacityProps {
   checked?: boolean
   title: string
+  lineThrough?: boolean
 }
 
-export function Checkbox({ checked, title, ...rest }: CheckboxProps) {
+export function Checkbox({ checked, title, lineThrough, ...rest }: CheckboxProps) {
   return (
     <TouchableOpacity
       {...rest}
@@ -21,7 +22,17 @@ export function Checkbox({ checked, title, ...rest }: CheckboxProps) {
       ) : (
           <View className='w-8 h-8 rounded-lg bg-zinc-900 border-2 border-zinc-800'></View>
       )}
-      <Text className='text-base font-regular text-white ml-3'>{title}</Text>
+      <Text
+        className='text-base font-regular text-white ml-3'
+        style={{
+          textDecorationLine: lineThrough && checked ? 'line-through' : 'none',
+          opacity: lineThrough && checked ? 0.6 : 1,
+          fontFamily: lineThrough ? 'Inter_600SemiBold' : 'Inter_400Regular',
+          fontSize: lineThrough ? 20 : 16
+        }}
+      >
+        {title}
+      </Text>
     </TouchableOpacity>
   )
 }
