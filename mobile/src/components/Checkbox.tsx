@@ -1,5 +1,7 @@
 import { Check } from 'phosphor-react-native'
 import { TouchableOpacity, View, Text, TouchableOpacityProps } from 'react-native'
+import Animated, { RotateInDownLeft, RotateOutDownRight } from 'react-native-reanimated'
+
 import colors from 'tailwindcss/colors'
 
 interface CheckboxProps extends TouchableOpacityProps {
@@ -16,9 +18,12 @@ export function Checkbox({ checked, title, lineThrough, ...rest }: CheckboxProps
       activeOpacity={0.7}
     >
       {checked ? (
-        <View className='w-8 h-8 items-center justify-center rounded-lg bg-green-500'>
+        <Animated.View
+          entering={RotateInDownLeft}
+          exiting={RotateOutDownRight}
+          className='w-8 h-8 items-center justify-center rounded-lg bg-green-500'>
           <Check weight='bold' size={20} color={colors.white} />
-        </View>
+        </Animated.View>
       ) : (
           <View className='w-8 h-8 rounded-lg bg-zinc-900 border-2 border-zinc-800'></View>
       )}

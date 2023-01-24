@@ -1,6 +1,6 @@
 import { Check } from 'phosphor-react-native'
 import { useState } from 'react'
-import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { ScrollView, Text, TextInput, TouchableOpacity, View, Alert } from 'react-native'
 import colors from 'tailwindcss/colors'
 
 import { BackButton } from '../components/BackButton'
@@ -38,7 +38,9 @@ export function New () {
       })
       setTitle('')
       setWeekDays([])
+      return Alert.alert('Habito', 'Habito criado com sucesso')
     }
+    Alert.alert('Aviso', 'Preencha todos os campos')
   }
   return (
     <Wrapper>

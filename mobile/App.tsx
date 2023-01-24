@@ -9,6 +9,7 @@ import {
 
 import './src/lib/dayjs'
 import { AppRoutes } from './src/routes'
+import { ActivityLoading } from './src/components/ActivityLoading'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,7 +19,7 @@ export default function App() {
     Inter_800ExtraBold
   })
 
-  if (!fontsLoaded) return null
+  if (!fontsLoaded) return <ActivityLoading />
 
   return (
     <>
