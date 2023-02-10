@@ -48,19 +48,19 @@ Ao acessar a home da aplicação web o usuário irá se deparar com a página ab
 - Cores mais claras indicam muito progresso nos hábitos diários.
 - Cinza com opacidade reduzida indica dias futuros e não são clicáveis.
 
-![Home](.github/screenshots/web-home.png)
+![Home](.github/web-home.png)
 
 Ao clicar no botão `Novo hábito`, o modal abaixo será exibido para o usuário inserir um título e os dias da semana em que o novo hábito deve ser realizado:
 
-![Alt text](.github/screenshots/web-habit-form.png)
+![Alt text](.github/web-habit-form.png)
 
 Ao clicar em algum dos dias as informações dele serão exibidas, por exemplo: a sua data numérica, o dia da semana, a barra de progresso e a lista de hábitos que devem ser realizados no respectivo dia da semana, conforme imagem a seguir:
 
-![Alt text](.github/screenshots/web-day-partial-completed.png)
+![Alt text](.github/web-day-partial-completed.png)
 
 Note que o quadrado do dia acima é mais escuro do que o da imagem a seguir. Isso se deve ao fato de que no dia abaixo a porcentagem de hábitos realizados foi maior:
 
-![Alt text](.github/screenshots/web-day-full-completed.png)
+![Alt text](.github/web-day-full-completed.png)
 
 Com isso conhecemos todos os fluxos da interface web ao utilizarmos a aplicação. Deixo abaixo um GIF de demonstração da aplicação sendo utilizada aonde passo por todas as funcionalidades acimas citadas:
 
@@ -74,20 +74,20 @@ Assim como na web, ao acessar a aplicação o usuário irá se deparar com os 'q
 
 |                           Splash Screen                           |                              Home vazia                               |                       Home com progresso                        |
 | :---------------------------------------------------------------: | :-------------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="./.github/screenshots/mobile-splash.png" width="250" /> | <img src="./.github/screenshots/mobile-empty-home.png" width="250" /> | <img src="./.github/screenshots/mobile-home.png" width="250" /> |
+| <img src="./.github/mobile-splash.png" width="250" /> | <img src="./.github/mobile-empty-home.png" width="250" /> | <img src="./.github/mobile-home.png" width="250" /> |
 
 Diferentemente da web, ao clicar em algum dia para ver os detalhes não teremos o popover com seus detalhes e sim o redirecionamento para uma tela aonde essas informações serão exibidas. A seguir veremos as telas aonde temos um dia sem hábitos vinculados, um dia com hábitos parcialmente concluídos e um dia totalmente concluído, respectivamente:
 
 |                               Dia sem hábitos                                |                            Dia parcialmente concluído                            |                           Dia totalmente concluído                            |
 | :--------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
-| <img src="./.github/screenshots/mobile-day-without-habit.png" width="250" /> | <img src="./.github/screenshots/mobile-day-partial-completed.png" width="250" /> | <img src="./.github/screenshots/mobile-day-full-completed.png" width="250" /> |
+| <img src="./.github/mobile-day-without-habit.png" width="250" /> | <img src="./.github/mobile-day-partial-completed.png" width="250" /> | <img src="./.github/mobile-day-full-completed.png" width="250" /> |
 
 Na Home e na tela de dia sem hábitos temos botão e link, respectivamente, que irá nos direcionar para o formulário de criação de um novo hábito.
 As informações necessárias são as mesmas da web e abaixo temos o fluxo de cadastro ilustrado:
 
 |                                 Form vazio                                 |                           Form preenchido                            |                               Cadastro concluído                               |
 | :------------------------------------------------------------------------: | :------------------------------------------------------------------: | :----------------------------------------------------------------------------: |
-| <img src="./.github/screenshots/mobile-new-habit-empty.png" width="250" /> | <img src="./.github/screenshots/mobile-new-habit.png" width="250" /> | <img src="./.github/screenshots/mobile-new-habit-completed.png" width="250" /> |
+| <img src="./.github/mobile-new-habit-empty.png" width="250" /> | <img src="./.github/mobile-new-habit.png" width="250" /> | <img src="./.github/mobile-new-habit-completed.png" width="250" /> |
 
 Com isso concluímos nosso tour pela aplicação mobile! 🙂
 Assim como na web, deixo abaixo um GIF navegando pela aplicação e passando por todos seus fluxos e também a demonstração das animações presentes no App:
